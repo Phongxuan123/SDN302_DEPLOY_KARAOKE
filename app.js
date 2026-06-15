@@ -8,7 +8,7 @@ const { requireLogin } = require("./middleware/authMiddleware");
 
 const app = express();
 const PORT = 3000;
-const MONGODB_URI = "mongodb://localhost:27017/karaokeDB";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/karaokeDB";
 
 mongoose
   .connect(MONGODB_URI)
